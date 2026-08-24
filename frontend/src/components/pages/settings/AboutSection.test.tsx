@@ -84,4 +84,17 @@ describe("AboutSection diagnostics download", () => {
       expect(target).toBeDefined();
     });
   });
+
+  it("shows personal UI customization while retaining upstream attribution", async () => {
+    render(<AboutSection />);
+    await waitFor(() => expect(API.getSystemVersion).toHaveBeenCalled());
+
+    expect(screen.getByText("由秦圣东进行个人 UI 定制")).toBeInTheDocument();
+    expect(screen.getByText("Copyright © 2026 Pollo3470 and ArcReel contributors")).toBeInTheDocument();
+    expect(screen.getByText(/Powered by ArcReel/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "https://github.com/ArcReel/ArcReel" })).toHaveAttribute(
+      "href",
+      "https://github.com/ArcReel/ArcReel",
+    );
+  });
 });

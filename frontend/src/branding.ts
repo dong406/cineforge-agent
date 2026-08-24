@@ -11,7 +11,7 @@ const env = import.meta.env as Record<string, string | undefined>;
 
 function fallback(value: string | undefined, defaultValue: string): string {
   // Trim + empty check so VITE_BRAND_NAME="" (or whitespace) falls back to the
-  // default, matching the documented "Empty = upstream defaults" contract.
+  // default, matching the documented "Empty = configured defaults" contract.
   if (typeof value !== "string") return defaultValue;
   const trimmed = value.trim();
   return trimmed.length > 0 ? trimmed : defaultValue;

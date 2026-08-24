@@ -285,6 +285,7 @@ export function AboutSection() {
           {t("about_legal_title")}
         </div>
         <div className="space-y-1 text-[12.5px] text-text-3">
+          <p>{t("about_personal_customization")}</p>
           <p>Copyright © 2026 Pollo3470 and ArcReel contributors</p>
           <p>
             Powered by ArcReel —{" "}
