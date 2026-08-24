@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>秦圣东 · AI Video Studio</title>
+  <desc>QS monogram in teal and sky blue</desc>
+  <defs>
+    <linearGradient id="qs-gradient" x1="13" y1="12" x2="52" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" />
+      <stop offset="1" stop-color="#2DD4BF" />
+    </linearGradient>
+    <filter id="qs-glow" x="5" y="5" width="54" height="54" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#08111F" />
+  <rect x="1" y="1" width="62" height="62" rx="17" stroke="url(#qs-gradient)" stroke-opacity=".62" stroke-width="2" />
+  <path d="M31.5 15.5a14 14 0 1 0 8.7 24.96" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" />
+  <path d="m34.5 35.5 11 11" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" />
+  <path d="M47 18.5c-6.6-3.1-13.5 1-13.5 6 0 8.6 16.2 4.2 16.2 13.1 0 5.2-6.4 8.6-12.9 5.5" stroke="url(#qs-gradient)" stroke-width="4.4" stroke-linecap="round" />
+  <circle cx="45.5" cy="19" r="3" fill="#38BDF8" filter="url(#qs-glow)" opacity=".78" />
+  <circle cx="45.5" cy="19" r="1.75" fill="#DDF8FF" />
+</svg>

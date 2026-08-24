@@ -10,7 +10,7 @@ import {
 import { errMsg, voidCall, voidPromise } from "@/utils/async";
 import { formatDate } from "@/utils/date-format";
 import { Link, useLocation } from "wouter";
-import { AlertTriangle, Library, Loader2, Plus, Search, Settings, Upload } from "lucide-react";
+import { AlertTriangle, Bot, Library, Loader2, Plus, Search, Settings, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { TFunction } from "i18next";
 import { API } from "@/api";
@@ -71,7 +71,7 @@ const ACCENT_BUTTON_STYLE: CSSProperties = {
   background:
     "linear-gradient(180deg, var(--color-accent-2), var(--color-accent))",
   boxShadow:
-    "inset 0 1px 0 oklch(1 0 0 / 0.3), 0 0 0 1px oklch(0.55 0.10 295 / 0.4), 0 4px 14px -6px var(--color-accent)",
+    "inset 0 1px 0 oklch(1 0 0 / 0.3), 0 0 0 1px var(--color-accent-soft), 0 4px 14px -6px var(--color-accent-glow)",
 };
 
 function projectActivityScore(p: ProjectSummary): number {
@@ -298,7 +298,7 @@ function PlaceholderTile({ onClick, title, kicker, icon, ariaLabel }: Placeholde
           style={{
             aspectRatio: "2 / 1",
             background:
-              "radial-gradient(120% 80% at 30% 30%, oklch(0.26 0.04 290 / 0.5) 0%, transparent 60%), oklch(0.18 0.011 265 / 0.55)",
+              "radial-gradient(120% 80% at 30% 30%, oklch(0.28 0.07 195 / 0.5) 0%, transparent 60%), oklch(0.18 0.025 250 / 0.55)",
           }}
         >
           <div className="flex flex-col items-center gap-2.5 transition-transform motion-safe:group-hover:-translate-y-0.5">
@@ -307,8 +307,8 @@ function PlaceholderTile({ onClick, title, kicker, icon, ariaLabel }: Placeholde
               className="grid h-12 w-12 place-items-center rounded-[12px]"
               style={{
                 background:
-                  "linear-gradient(180deg, oklch(0.30 0.04 290), oklch(0.22 0.02 280))",
-                border: "1px solid oklch(0.76 0.09 295 / 0.4)",
+                  "linear-gradient(180deg, oklch(0.31 0.08 198), oklch(0.22 0.045 230))",
+                border: "1px solid var(--color-accent-soft)",
                 boxShadow:
                   "inset 0 1px 0 oklch(1 0 0 / 0.06), 0 8px 22px -14px var(--color-accent)",
                 color: "var(--color-accent-2)",
@@ -406,7 +406,7 @@ function TopBar({
       className="sticky top-0 z-30"
       style={{
         background:
-          "linear-gradient(180deg, oklch(0.20 0.011 265 / 0.55), oklch(0.15 0.010 265 / 0.45))",
+          "linear-gradient(180deg, oklch(0.20 0.030 250 / 0.82), oklch(0.15 0.026 252 / 0.78))",
         backdropFilter: "blur(28px) saturate(1.5)",
         WebkitBackdropFilter: "blur(28px) saturate(1.5)",
         borderBottom: "1px solid oklch(1 0 0 / 0.06)",
@@ -414,22 +414,24 @@ function TopBar({
           "inset 0 1px 0 oklch(1 0 0 / 0.05), 0 6px 24px -12px oklch(0 0 0 / 0.45)",
       }}
     >
-      <div className="mx-auto flex max-w-[1320px] items-center gap-4 px-6 py-3">
-        <div className="flex items-center gap-2.5">
+      <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 sm:px-6 lg:flex-nowrap">
+        <div className="flex min-w-0 items-center gap-2.5">
           <img
-            src="/android-chrome-192x192.png"
+            src="/qinshengdong-mark.svg"
             alt={BRAND.name}
-            className="h-8 w-8 rounded-lg"
+            className="h-9 w-9 shrink-0 rounded-xl border border-accent/30 bg-bg p-1 shadow-[0_8px_20px_-12px_var(--color-accent-glow)]"
           />
-          <span
-            className="font-sans text-[17px] font-medium tracking-[-0.012em] text-text"
-            aria-hidden
-          >
-            {BRAND.name}
-          </span>
+          <div aria-hidden className="min-w-0">
+            <span className="block truncate font-sans text-[15px] font-semibold tracking-[-0.012em] text-text sm:text-[17px]">
+              {BRAND.name}
+            </span>
+            <span className="hidden truncate font-mono text-[9px] font-semibold tracking-[0.08em] text-accent-2 sm:block">
+              {BRAND.tagline}
+            </span>
+          </div>
         </div>
 
-        <label className="ml-2 flex w-[min(420px,100%)] items-center gap-2 rounded-lg border border-hairline-soft bg-bg/55 px-3 py-1.5 transition-colors focus-within:border-accent/60">
+        <label className="order-3 flex w-full items-center gap-2 rounded-lg border border-hairline-soft bg-bg/55 px-3 py-2 transition-colors focus-within:border-accent/60 lg:order-none lg:ml-2 lg:w-auto lg:max-w-[420px] lg:flex-1">
             <Search className="h-3.5 w-3.5 text-text-3" />
             <input
               ref={searchInputRef}
@@ -454,55 +456,62 @@ function TopBar({
             </kbd>
         </label>
 
-        <div className="ml-auto flex items-center gap-1.5">
+        <div className="ml-auto flex min-w-0 items-center gap-1 sm:gap-1.5">
           <button
             type="button"
             onClick={onAssets}
-            className="inline-flex items-center gap-1.5 rounded-[7px] border border-accent/25 bg-accent-dim px-3 py-1.5 text-[12px] text-text-2 transition-colors hover:border-accent/50 hover:bg-accent-soft hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-[7px] border border-accent/25 bg-accent-dim px-2.5 py-1.5 text-[12px] text-text-2 transition-colors hover:border-accent/50 hover:bg-accent-soft hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-3"
             title={t("assets:library_title")}
+            aria-label={t("assets:library_title")}
           >
-            <Library className="h-3.5 w-3.5" />
-            {t("assets:library_title")}
+            <Library className="h-4 w-4" aria-hidden />
+            <span className="hidden xl:inline">{t("assets:library_title")}</span>
           </button>
-          <span aria-hidden className="mx-1 h-5 w-px bg-hairline-soft" />
+          <span aria-hidden className="mx-1 hidden h-5 w-px bg-hairline-soft sm:block" />
           <button
             type="button"
             onClick={onImport}
             disabled={importing}
-            className="inline-flex items-center gap-1.5 rounded-[7px] border border-hairline bg-bg-grad-a/50 px-3 py-1.5 text-[12px] text-text-2 transition-colors hover:border-hairline-strong hover:bg-bg-grad-a focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-[7px] border border-hairline bg-bg-grad-a/50 px-2.5 py-1.5 text-[12px] text-text-2 transition-colors hover:border-hairline-strong hover:bg-bg-grad-a focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-60 sm:px-3"
+            title={importing ? t("dashboard:importing") : t("dashboard:import_zip")}
+            aria-label={importing ? t("dashboard:importing") : t("dashboard:import_zip")}
           >
             {importing ? (
-              <Loader2 className="h-3.5 w-3.5 motion-safe:animate-spin" />
+              <Loader2 className="h-4 w-4 motion-safe:animate-spin" aria-hidden />
             ) : (
-              <Upload className="h-3.5 w-3.5" />
+              <Upload className="h-4 w-4" aria-hidden />
             )}
-            {importing ? t("dashboard:importing") : t("dashboard:import_zip")}
+            <span className="hidden lg:inline">
+              {importing ? t("dashboard:importing") : t("dashboard:import_zip")}
+            </span>
           </button>
           <button
             type="button"
             onClick={onCreate}
             data-onboarding={ONBOARDING_ANCHORS.lobbyCreateProject}
-            className="inline-flex items-center gap-1.5 rounded-[7px] px-3.5 py-1.5 text-[12px] font-semibold transition-transform motion-safe:hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-[7px] px-2.5 py-1.5 text-[12px] font-semibold transition-transform motion-safe:hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-3.5"
             style={ACCENT_BUTTON_STYLE}
+            title={t("dashboard:create_project")}
+            aria-label={t("dashboard:create_project")}
           >
-            <Plus className="h-3.5 w-3.5" />
-            {t("dashboard:create_project")}
+            <Plus className="h-4 w-4" aria-hidden />
+            <span className="hidden sm:inline">{t("dashboard:create_project")}</span>
           </button>
-          <span aria-hidden className="mx-1 h-5 w-px bg-hairline-soft" />
+          <span aria-hidden className="mx-1 hidden h-5 w-px bg-hairline-soft sm:block" />
           <button
             type="button"
             onClick={onOpenClaw}
-            className="rounded-md px-2 py-1.5 text-sm text-text-3 transition-colors hover:bg-bg-grad-a hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="inline-grid min-h-11 min-w-11 place-items-center rounded-md text-text-3 transition-colors hover:bg-bg-grad-a hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             title={t("dashboard:openclaw")}
             aria-label={t("dashboard:openclaw")}
           >
-            <span aria-hidden>🦞</span>
+            <Bot className="h-4 w-4" aria-hidden />
           </button>
           <button
             type="button"
             onClick={onSettings}
             data-onboarding={ONBOARDING_ANCHORS.lobbySettings}
-            className={`relative ${ICON_BTN_FILLED_CLS}`}
+            className={`relative min-h-11 min-w-11 ${ICON_BTN_FILLED_CLS}`}
             title={t("settings")}
             aria-label={t("settings")}
           >
@@ -692,11 +701,11 @@ function FilterPills({ active, onChange, counts, phaseLabels, t }: FilterPillsPr
 
   return (
     <div
-      className="sticky z-20 border-b border-hairline backdrop-blur-md"
+      className="z-20 border-b border-hairline backdrop-blur-md lg:sticky"
       style={{
-        top: "var(--lobby-topbar-h, 57px)",
+        top: "var(--lobby-topbar-h, 65px)",
         background:
-          "linear-gradient(180deg, oklch(0.20 0.011 265 / 0.55), oklch(0.15 0.010 265 / 0.45))",
+          "linear-gradient(180deg, oklch(0.20 0.030 250 / 0.78), oklch(0.15 0.026 252 / 0.72))",
         backdropFilter: "blur(16px) saturate(1.1)",
         borderTopWidth: 1,
         borderTopColor: "var(--color-hairline-soft)",
@@ -715,7 +724,7 @@ function FilterPills({ active, onChange, counts, phaseLabels, t }: FilterPillsPr
                 "inline-flex items-center rounded-full px-3 py-1 text-[11.5px] font-medium backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent " +
                 (isActive
                   ? "border border-accent/40 bg-accent/45 text-text"
-                  : "border border-hairline-soft bg-[oklch(0.22_0.012_265_/_0.7)] text-text-3 hover:border-hairline hover:bg-[oklch(0.24_0.012_265_/_0.78)] hover:text-text-2")
+                  : "border border-hairline-soft bg-[oklch(0.22_0.030_250_/_0.7)] text-text-3 hover:border-hairline hover:bg-[oklch(0.24_0.032_248_/_0.78)] hover:text-text-2")
               }
             >
               {c.label}
@@ -981,10 +990,10 @@ export function ProjectsPage() {
       className="relative min-h-screen text-text"
       style={
         {
-          // FilterPills 的 sticky top 读这个变量；TopBar = logo h-8 (32) + py-3 (24) + 1px border
-          "--lobby-topbar-h": "57px",
+          // FilterPills 在桌面端读取这个高度；移动端改为非 sticky，避免折行工具栏遮挡筛选项。
+          "--lobby-topbar-h": "65px",
           background:
-            "radial-gradient(1100px 540px at 8% -10%, oklch(0.32 0.05 295 / 0.28), transparent 55%), radial-gradient(900px 500px at 100% 110%, oklch(0.26 0.04 260 / 0.25), transparent 55%), linear-gradient(180deg, var(--color-bg-grad-a), var(--color-bg-grad-b))",
+            "radial-gradient(1100px 540px at 8% -10%, oklch(0.34 0.075 195 / 0.25), transparent 55%), radial-gradient(900px 500px at 100% 110%, oklch(0.27 0.050 230 / 0.24), transparent 55%), linear-gradient(180deg, var(--color-bg-grad-a), var(--color-bg-grad-b))",
         } as CSSProperties
       }
     >
