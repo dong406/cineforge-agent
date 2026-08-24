@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { Router } from "wouter";
 import { memoryLocation } from "wouter/memory-location";
@@ -82,5 +82,14 @@ describe("LoginPage returnTo consumption", () => {
     await waitFor(() => {
       expect(history.at(-1)).toBe("/app/projects");
     });
+  });
+
+  it("shows the Qin Shengdong studio mark as a named image", () => {
+    renderLoginAt("/login");
+
+    expect(screen.getByRole("img", { name: "秦圣东 · AI Video Studio" })).toHaveAttribute(
+      "src",
+      "/qinshengdong-mark.svg",
+    );
   });
 });
