@@ -18,6 +18,10 @@ afterEach(() => {
 
 describe("personal studio branding", () => {
   it("ships Qin Shengdong's studio identity by default", async () => {
+    vi.stubEnv("VITE_BRAND_NAME", "");
+    vi.stubEnv("VITE_BRAND_TAGLINE", " ");
+    vi.stubEnv("VITE_BRAND_DESCRIPTION", "\t");
+
     const { BRAND, PERSONAL_UI_ATTRIBUTION } = await loadBranding();
 
     expect(BRAND).toMatchObject(DEFAULT_BRAND);
