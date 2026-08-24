@@ -96,6 +96,7 @@ export default {
   'about_published_at': 'Published: {{date}}',
   'about_checked_at': 'Last checked: {{date}}',
   'about_legal_title': 'Copyright & Attribution',
+  'about_personal_customization': 'Personal UI customization by Qin Shengdong',
   'diagnostics_section_title': 'Diagnostic logs',
   'diagnostics_section_desc': 'Bundle the last 7 days of logs and system info (API keys masked) for bug reports.',
   'diagnostics_download': 'Download diagnostic logs',
