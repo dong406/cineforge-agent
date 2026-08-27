@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const DEFAULT_BRAND = {
-  name: "秦圣东 · AI Video Studio",
-  tagline: "Agent 驱动的 AI 视频工作台",
-  description: "面向脚本到成片的 Agent 驱动 AI 视频工作台。",
+  name: "CineForge Agent",
+  tagline: "AI 视频创作智能体工作台",
+  description: "从脚本到成片的 Agent 驱动 AI 视频创作工作台。",
 } as const;
 
 async function loadBranding() {
@@ -16,8 +16,8 @@ afterEach(() => {
   vi.resetModules();
 });
 
-describe("personal studio branding", () => {
-  it("ships Qin Shengdong's studio identity by default", async () => {
+describe("CineForge Agent branding", () => {
+  it("ships the CineForge Agent identity by default", async () => {
     vi.stubEnv("VITE_BRAND_NAME", "");
     vi.stubEnv("VITE_BRAND_TAGLINE", " ");
     vi.stubEnv("VITE_BRAND_DESCRIPTION", "\t");

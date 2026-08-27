@@ -84,10 +84,10 @@ describe("LoginPage returnTo consumption", () => {
     });
   });
 
-  it("shows the Qin Shengdong studio mark as a named image", () => {
+  it("shows the CineForge Agent mark as a named image", () => {
     renderLoginAt("/login");
 
-    expect(screen.getByRole("img", { name: "秦圣东 · AI Video Studio" })).toHaveAttribute(
+    expect(screen.getByRole("img", { name: "CineForge Agent" })).toHaveAttribute(
       "src",
       "/qinshengdong-mark.svg",
     );
