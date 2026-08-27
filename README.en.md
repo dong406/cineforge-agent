@@ -1,17 +1,17 @@
 <h1 align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="frontend/public/android-chrome-maskable-512x512.png">
-    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/android-chrome-512x512.png">
-    <img src="frontend/public/android-chrome-maskable-512x512.png" alt="ArcReel Logo" width="128">
+    <source media="(prefers-color-scheme: light)" srcset="frontend/public/qinshengdong-mark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/qinshengdong-mark.svg">
+    <img src="frontend/public/qinshengdong-mark.svg" alt="CineForge Agent Logo" width="128">
   </picture>
   <br>
-  ArcReel
+  CineForge Agent
   <br>
 </h1>
 
 <p align="center">
-  <strong>An open-source, self-hosted AI video production workspace</strong>
+  <strong>AI video creation agent workspace</strong>
   <br>
   Turn novels, finished screenplays, or product assets into character-consistent, controllable, cost-trackable short videos that remain editable.
 </p>
@@ -22,12 +22,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ArcReel/ArcReel/releases/latest"><img src="https://img.shields.io/github/v/release/ArcReel/ArcReel?style=flat-square&label=release" alt="Release"></a>
-  <a href="https://github.com/ArcReel/ArcReel/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/ArcReel/ArcReel/test.yml?style=flat-square&label=tests" alt="Tests"></a>
-  <a href="https://codecov.io/gh/ArcReel/ArcReel"><img src="https://img.shields.io/codecov/c/github/ArcReel/ArcReel?style=flat-square&label=coverage" alt="Coverage"></a>
-  <a href="https://github.com/ArcReel/ArcReel/pkgs/container/arcreel"><img src="https://img.shields.io/badge/Docker-ghcr.io-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-2ea44f?style=flat-square" alt="License"></a>
-  <a href="https://github.com/ArcReel/ArcReel"><img src="https://img.shields.io/github/stars/ArcReel/ArcReel?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/dong406/cineforge-agent"><img src="https://img.shields.io/github/stars/dong406/cineforge-agent?style=flat-square" alt="Stars"></a>
 </p>
 
 <p align="center">
@@ -41,12 +37,12 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero-screenshot.png" alt="ArcReel Workspace" width="900">
+  <img src="docs/assets/hero-screenshot.png" alt="CineForge Agent Workspace" width="900">
 </p>
 
-## What ArcReel is
+## What CineForge Agent is
 
-ArcReel is an open-source, self-hosted workspace for AI drama and novel adaptation, narrated short videos, ads, and product shorts. It organizes content analysis, asset management, storyboards, media generation, cost tracking, and export into an inspectable and resumable production pipeline.
+CineForge Agent is an agent-powered workspace for AI drama and novel adaptation, narrated short videos, ads, and product shorts. It organizes content analysis, asset management, storyboards, media generation, cost tracking, and export into an inspectable and resumable production pipeline.
 
 - **One production workflow**: turn novels, finished screenplays, or product assets into characters, scenes, props, storyboards, video clips, and final videos step by step.
 - **Visual continuity with human control**: reuse reference assets across shots, review key stages, regenerate individual assets, and roll back to earlier versions.
@@ -73,18 +69,18 @@ Every stage can be orchestrated by the AI assistant, or reviewed, adjusted, and 
 Install Docker and Docker Compose, then run:
 
 ```bash
-git clone https://github.com/ArcReel/ArcReel.git
-cd ArcReel/deploy
+git clone https://github.com/dong406/cineforge-agent.git
+cd cineforge-agent/deploy
 
 cp .env.example .env
 docker compose up -d
 ```
 
-Open <http://localhost:1241>. The default username is `admin`. If `AUTH_PASSWORD` is empty, ArcReel generates a password on first startup and writes it back to `deploy/.env`.
+Open <http://localhost:1241>. The default username is `admin`. If `AUTH_PASSWORD` is empty, CineForge Agent generates a password on first startup and writes it back to `deploy/.env`.
 
-> Default Compose publishes port `1241` on all host interfaces. Do not expose ArcReel directly to the public Internet; before enabling remote access, configure authentication and use HTTPS, a VPN, or a secure tunnel. See [Reverse Proxy and HTTPS](https://docs.arc-reel.com/en/ops/deployment#reverse-proxy-and-https).
+> Default Compose publishes port `1241` on all host interfaces. Do not expose CineForge Agent directly to the public Internet; before enabling remote access, configure authentication and use HTTPS, a VPN, or a secure tunnel. See [Reverse Proxy and HTTPS](https://docs.arc-reel.com/en/ops/deployment#reverse-proxy-and-https).
 
-After signing in, open **Settings**, configure the ArcReel AI assistant and the required text, image, and video generation capabilities, then create a project.
+After signing in, open **Settings**, configure CineForge Agent and the required text, image, and video generation capabilities, then create a project.
 
 For the complete first-run workflow, see [Getting Started](https://docs.arc-reel.com/en/guide/getting-started). For production deployment, upgrades, backups, and reverse proxies, see [Deployment and Operations](https://docs.arc-reel.com/en/ops/deployment).
 
@@ -96,7 +92,7 @@ For the complete first-run workflow, see [Getting Started](https://docs.arc-reel
 | [Getting Started](https://docs.arc-reel.com/en/guide/getting-started) | From first deployment to the first generated video |
 | [Workflows and Modes](https://docs.arc-reel.com/en/guide/workflows) | Novels, scripts, and creative ideas; three creation types and two generation modes |
 | [Provider Configuration](https://docs.arc-reel.com/en/guide/providers) | Selection and configuration of Agent, text, image, video, and TTS providers |
-| [Jianying Draft Export](https://docs.arc-reel.com/en/guide/jianying-export) | Continue editing ArcReel output in Jianying |
+| [Jianying Draft Export](https://docs.arc-reel.com/en/guide/jianying-export) | Continue editing CineForge Agent output in Jianying |
 | [FAQ](https://docs.arc-reel.com/en/guide/faq) | Deployment, cost, model, data, and licensing questions |
 | [Deployment and Operations](https://docs.arc-reel.com/en/ops/deployment) | SQLite, PostgreSQL, upgrades, backups, and reverse proxies |
 | [Migrate from SQLite to PostgreSQL](https://docs.arc-reel.com/en/ops/migrate-to-postgres) | Data migration, verification, and rollback |
@@ -125,16 +121,16 @@ uv run pre-commit install
 
 ## License and commercial use
 
-ArcReel is licensed under the [GNU Affero General Public License v3.0](LICENSE). Additional terms are available in [NOTICE](NOTICE).
+CineForge Agent is based on the open-source [ArcReel](https://github.com/ArcReel/ArcReel) project and retains its upstream attribution. This repository remains licensed under the [GNU Affero General Public License v3.0](LICENSE); additional terms are available in [NOTICE](NOTICE).
 
 For organizations that cannot use AGPL-3.0, or need commercial deployment, white-labeling, or redistribution without AGPL obligations, contact:
 
 **support@arc-reel.com**
 
-Copyright © 2026 Pollo3470 and ArcReel contributors
+Upstream copyright © 2026 Pollo3470 and ArcReel contributors
 
 ---
 
 <p align="center">
-  If ArcReel helps your work, consider giving the project a ⭐ Star.
+  If CineForge Agent helps your work, consider giving the project a ⭐ Star.
 </p>

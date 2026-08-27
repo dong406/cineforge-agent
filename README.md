@@ -1,17 +1,17 @@
 <h1 align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="frontend/public/android-chrome-maskable-512x512.png">
-    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/android-chrome-512x512.png">
-    <img src="frontend/public/android-chrome-maskable-512x512.png" alt="ArcReel Logo" width="128">
+    <source media="(prefers-color-scheme: light)" srcset="frontend/public/qinshengdong-mark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="frontend/public/qinshengdong-mark.svg">
+    <img src="frontend/public/qinshengdong-mark.svg" alt="CineForge Agent Logo" width="128">
   </picture>
   <br>
-  ArcReel
+  CineForge Agent
   <br>
 </h1>
 
 <p align="center">
-  <strong>开源、自托管的 AI 视频生产工作台</strong>
+  <strong>AI 视频创作智能体工作台</strong>
   <br>
   将小说、成品剧本或商品素材转化为角色一致、过程可控、成本可追踪、可继续编辑的短视频。
 </p>
@@ -22,12 +22,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ArcReel/ArcReel/releases/latest"><img src="https://img.shields.io/github/v/release/ArcReel/ArcReel?style=flat-square&label=release" alt="Release"></a>
-  <a href="https://github.com/ArcReel/ArcReel/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/ArcReel/ArcReel/test.yml?style=flat-square&label=tests" alt="Tests"></a>
-  <a href="https://codecov.io/gh/ArcReel/ArcReel"><img src="https://img.shields.io/codecov/c/github/ArcReel/ArcReel?style=flat-square&label=coverage" alt="Coverage"></a>
-  <a href="https://github.com/ArcReel/ArcReel/pkgs/container/arcreel"><img src="https://img.shields.io/badge/Docker-ghcr.io-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-2ea44f?style=flat-square" alt="License"></a>
-  <a href="https://github.com/ArcReel/ArcReel"><img src="https://img.shields.io/github/stars/ArcReel/ArcReel?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/dong406/cineforge-agent"><img src="https://img.shields.io/github/stars/dong406/cineforge-agent?style=flat-square" alt="Stars"></a>
 </p>
 
 <p align="center">
@@ -41,12 +37,12 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero-screenshot.png" alt="ArcReel 工作台" width="900">
+  <img src="docs/assets/hero-screenshot.png" alt="CineForge Agent 工作台" width="900">
 </p>
 
-## ArcReel 是什么
+## CineForge Agent 是什么
 
-ArcReel 是面向 AI 漫剧与小说改编、旁白/解说短视频、广告与带货短片的开源自托管工作台。它把内容分析、资产管理、分镜、媒体生成、费用追踪和导出组织成一条可审核、可中断恢复的生产流水线。
+CineForge Agent 是面向 AI 漫剧与小说改编、旁白/解说短视频、广告与带货短片的智能体创作工作台。它通过 Agent 编排内容分析、资产管理、分镜、媒体生成、费用追踪和导出，形成一条可审核、可中断恢复的生产流水线。
 
 - **统一生产链路**：小说、成品剧本或商品素材都能逐步转化为角色、场景、道具、分镜、视频片段和最终成片。
 - **视觉一致、人工可控**：跨分镜复用资产图等参考图，关键阶段可确认，单个素材可重做，历史版本可回滚。
@@ -73,8 +69,8 @@ flowchart LR
 准备好 Docker 和 Docker Compose，然后运行：
 
 ```bash
-git clone https://github.com/ArcReel/ArcReel.git
-cd ArcReel/deploy
+git clone https://github.com/dong406/cineforge-agent.git
+cd cineforge-agent/deploy
 
 cp .env.example .env
 docker compose up -d
@@ -84,7 +80,7 @@ docker compose up -d
 
 > 默认 Compose 会将 `1241` 端口发布到宿主机所有网络接口。请勿将服务直接暴露到公网；远程访问前请配置认证，并使用 HTTPS、VPN 或安全隧道，详见 [反向代理与 HTTPS](https://docs.arc-reel.com/ops/deployment#reverse-proxy-and-https)。
 
-登录后进入 **设置** 页面，配置 ArcReel Agent 以及文本、图像、视频等生成能力，再创建项目开始制作。
+登录后进入 **设置** 页面，配置 CineForge Agent 以及文本、图像、视频等生成能力，再创建项目开始制作。
 
 完整的首次使用流程见 [完整入门教程](https://docs.arc-reel.com/guide/getting-started)；生产部署、升级、备份和反向代理见 [部署与运维](https://docs.arc-reel.com/ops/deployment)。
 
@@ -96,7 +92,7 @@ docker compose up -d
 | [完整入门教程](https://docs.arc-reel.com/guide/getting-started) | 从首次部署到生成第一条视频 |
 | [创作流程与模式](https://docs.arc-reel.com/guide/workflows) | 小说、剧本与创作构想，三种创作类型及两种生成模式 |
 | [供应商与模型配置](https://docs.arc-reel.com/guide/providers) | Agent、文本、图像、视频、TTS 供应商的选择和配置 |
-| [剪映草稿导出](https://docs.arc-reel.com/guide/jianying-export) | 将 ArcReel 生成结果交给剪映继续编辑 |
+| [剪映草稿导出](https://docs.arc-reel.com/guide/jianying-export) | 将 CineForge Agent 生成结果交给剪映继续编辑 |
 | [常见问题](https://docs.arc-reel.com/guide/faq) | 部署、费用、模型、数据和许可证问题 |
 | [部署与运维](https://docs.arc-reel.com/ops/deployment) | SQLite、PostgreSQL、升级、备份和反向代理 |
 | [从 SQLite 迁移到 PostgreSQL](https://docs.arc-reel.com/ops/migrate-to-postgres) | 数据迁移、验证与回滚流程 |
@@ -123,18 +119,18 @@ docker compose up -d
 uv run pre-commit install
 ```
 
-## 许可证与商业使用
+## 上游项目与许可证
 
-ArcReel 采用 [GNU Affero General Public License v3.0](LICENSE)，附加条款见 [NOTICE](NOTICE)。
+CineForge Agent 基于开源项目 [ArcReel](https://github.com/ArcReel/ArcReel) 进行界面品牌与使用体验调整。项目继续遵循 [GNU Affero General Public License v3.0](LICENSE)，附加条款见 [NOTICE](NOTICE)。
 
 如果你的组织无法采用 AGPL-3.0，或者希望在不承担 AGPL 开源义务的情况下进行商业部署、白标或再分发，请联系：
 
 **support@arc-reel.com**
 
-Copyright © 2026 Pollo3470 and ArcReel contributors
+上游版权：Copyright © 2026 Pollo3470 and ArcReel contributors
 
 ---
 
 <p align="center">
-  如果 ArcReel 对你有帮助，欢迎点亮一个 ⭐ Star。
+  如果 CineForge Agent 对你有帮助，欢迎点亮一个 ⭐ Star。
 </p>
