@@ -128,3 +128,4 @@ docs/verification-reports/
 .impeccable/live/deferred-svelte-component-accepts.json
 .impeccable/live/*.png
 # impeccable-ignore-end
+.worktrees/
