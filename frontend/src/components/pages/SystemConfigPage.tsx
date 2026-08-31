@@ -59,7 +59,7 @@ interface SectionGroup {
 
 const SECTION_GROUPS: SectionGroup[] = [
   {
-    kicker: "Configuration",
+    kicker: "配置",
     items: [
       { id: "providers", labelKey: "dashboard:providers", Icon: Plug },
       { id: "agent", labelKey: "dashboard:agents", Icon: Bot },
@@ -67,14 +67,14 @@ const SECTION_GROUPS: SectionGroup[] = [
     ],
   },
   {
-    kicker: "Access",
+    kicker: "访问",
     items: [
       { id: "usage", labelKey: "dashboard:usage", Icon: BarChart3 },
       { id: "api-keys", labelKey: "dashboard:api_keys", Icon: KeyRound },
     ],
   },
   {
-    kicker: "System",
+    kicker: "系统",
     items: [{ id: "about", labelKey: "dashboard:about", Icon: Info }],
   },
 ];
@@ -160,7 +160,7 @@ export function SystemConfigPage() {
           <span aria-hidden className="h-5 w-px bg-hairline-soft" />
           <div className="min-w-0 flex-1">
             <div className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-accent-2">
-              Control Booth — {currentLang.toUpperCase()}
+              控制台 — {currentLang.toUpperCase()}
             </div>
             <h1
               className="font-editorial mt-0.5"

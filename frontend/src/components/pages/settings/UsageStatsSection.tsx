@@ -236,7 +236,7 @@ export function UsageStatsSection() {
                 </div>
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-[11px] tabular-nums text-text-3">
                   <span>
-                    <span className="text-text-4">CALLS </span>
+                    <span className="text-text-4">调用 </span>
                     {s.total_calls}
                   </span>
                   <span>
@@ -244,7 +244,7 @@ export function UsageStatsSection() {
                     {s.success_calls}
                   </span>
                   <span>
-                    <span className="text-text-4">RATE </span>
+                    <span className="text-text-4">成功率 </span>
                     <span className={successRate >= 0.95 ? "text-good" : "text-warm"}>
                       {s.total_calls > 0 ? percentFmt.format(successRate) : "0%"}
                     </span>
@@ -258,7 +258,7 @@ export function UsageStatsSection() {
                       )
                     : s.total_duration_seconds !== undefined && (
                         <span>
-                          <span className="text-text-4">DUR </span>
+                          <span className="text-text-4">耗时 </span>
                           {s.total_duration_seconds}s
                         </span>
                       )}

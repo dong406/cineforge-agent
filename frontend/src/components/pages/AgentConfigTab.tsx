@@ -166,7 +166,7 @@ export function AgentConfigTab({ visible }: AgentConfigTabProps) {
       <div className="space-y-7 pb-0 pt-1">
         <AgentPageIntro />
         <CredentialsSection />
-        <SectionShell kicker="Runtime Tuning" title={t("advanced_settings")}>
+        <SectionShell kicker="运行调优" title={t("advanced_settings")}>
           <div className="space-y-4">
             <div>
               <FieldLabel htmlFor="agent-cleanup-delay" className="">

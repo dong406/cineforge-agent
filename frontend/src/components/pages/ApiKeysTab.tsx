@@ -155,7 +155,7 @@ function CreateModal({ onClose, onCreated }: CreateModalProps) {
         <div className="mb-5 flex items-center justify-between">
           <div>
             <div className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-accent-2">
-              {created ? "Key Issued" : "New Token"}
+              {created ? "密钥已生成" : "新建令牌"}
             </div>
             <h3
               className="font-editorial mt-1"

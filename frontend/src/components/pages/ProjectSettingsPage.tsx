@@ -676,7 +676,7 @@ export function ProjectSettingsPage() {
           {/* Style picker (independent save flow, mutually exclusive template / custom) */}
           {styleValue && (
             <SectionCard
-              kicker="Visual Style"
+              kicker="视觉风格"
               title={t("project_style_section_title")}
               footer={
                 <div className="flex items-center gap-3">
@@ -716,7 +716,7 @@ export function ProjectSettingsPage() {
           {options && (
             <>
               {/* Model config (video + duration + image + text) */}
-              <SectionCard kicker="Engine Routing" title={t("model_config")}>
+              <SectionCard kicker="模型路由" title={t("model_config")}>
                 <ModelConfigSection
                   projectName={projectName}
                   value={{
@@ -781,7 +781,7 @@ export function ProjectSettingsPage() {
               </SectionCard>
 
               {/* Aspect ratio */}
-              <SectionCard kicker="Frame Aspect">
+              <SectionCard kicker="画幅比例">
                 <fieldset>
                   <legend className="mb-2.5 block font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-text-3">
                     {t("aspect_ratio_label")}
@@ -825,7 +825,7 @@ export function ProjectSettingsPage() {
               </SectionCard>
 
               {/* Generation route — 创建时锁定，此处只读；宫格装配开关随时可切 */}
-              <SectionCard kicker="Pipeline Mode">
+              <SectionCard kicker="流程模式">
                 <div className="space-y-2.5">
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-text-3">
@@ -854,7 +854,7 @@ export function ProjectSettingsPage() {
 
               {/* 口播语速估算：驱动时长建议、说话量提示与字幕定时，与配音（TTS）无关，
                   故独立成卡、不与 Audio Channel 同栏，避免两个「语速」被读成一个设置 */}
-              <SectionCard kicker="Pacing Estimate">
+              <SectionCard kicker="时长预估">
                 <SpeechRateField
                   value={speechRate}
                   onChange={setSpeechRate}
@@ -865,7 +865,7 @@ export function ProjectSettingsPage() {
               {/* 旁白配音（TTS）：仅 旁白/解说消费——TTS 绑定 segment.novel_text，drama/ad 无该字段，
                   故与两个画布的批量旁白按钮（contentMode === "narration"）同口径门控，避免对无效模式展示配音卡 */}
               {contentMode === "narration" && (
-              <SectionCard kicker="Audio Channel" title={t("media_narration_title")}>
+              <SectionCard kicker="音频通道" title={t("media_narration_title")}>
                 <div className="space-y-4">
                   <div>
                     <div className="mb-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-text-4">

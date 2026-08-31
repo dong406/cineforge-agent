@@ -522,7 +522,7 @@ export function CustomProviderForm({ existing, onSaved, onCancel }: CustomProvid
       <div className="max-w-2xl">
       <div className="mb-6">
         <div className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-accent-2">
-          {isEdit ? "EDIT PROVIDER" : "NEW PROVIDER"}
+          {isEdit ? "编辑服务商" : "新建服务商"}
         </div>
         <h3
           className="font-editorial mt-1"

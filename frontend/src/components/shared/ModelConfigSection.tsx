@@ -367,7 +367,7 @@ export function ModelConfigSection({
       <p className="text-[12.5px] leading-[1.55] text-text-3">{t("default_hint")}</p>
 
       {showVideo && (
-        <ChannelCard kicker="Video Channel" title={t("model_video")}>
+        <ChannelCard kicker="视频通道" title={t("model_video")}>
           <LayeredModelFields
             defaultLabel={t("model_video_default")}
             defaultValue={value.videoBackend}
@@ -483,7 +483,7 @@ export function ModelConfigSection({
       )}
 
       {showImage && (
-        <ChannelCard kicker="Image Channel" title={t("model_image")}>
+        <ChannelCard kicker="图像通道" title={t("model_image")}>
           <LayeredModelFields
             defaultLabel={t("model_image_default")}
             defaultValue={value.imageBackendDefault}
@@ -508,7 +508,7 @@ export function ModelConfigSection({
       )}
 
       {showText && (
-        <ChannelCard kicker="Text Channel" title={t("model_text")}>
+        <ChannelCard kicker="文本通道" title={t("model_text")}>
           <TextTierFields
             value={{
               default: value.textBackendDefault,

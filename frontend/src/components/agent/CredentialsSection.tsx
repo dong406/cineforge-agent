@@ -160,7 +160,7 @@ export function CredentialsSection() {
   return (
     <>
       <SectionShell
-        kicker="Credentials"
+        kicker="凭据"
         title={t("agent_credentials")}
         description={t("anthropic_key_required_desc")}
         trailing={

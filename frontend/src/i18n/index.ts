@@ -79,6 +79,9 @@ export const i18nReady = i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    // 产品面向中文用户：即使浏览器或本地存储保留了英文偏好，也始终以中文打开。
+    // 设置页中的语言切换仍可在当前会话中正常使用。
+    lng: 'zh',
     fallbackLng: 'zh',
     supportedLngs: SUPPORTED_LANGUAGES,
     debug: false,
