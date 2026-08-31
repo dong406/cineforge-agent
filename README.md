@@ -99,13 +99,6 @@ docker compose up -d
 | [架构说明](https://docs.arc-reel.com/dev/architecture) | Agent Runtime、任务队列、供应商抽象和数据层 |
 | [贡献指南](https://docs.arc-reel.com/dev/contributing) | 本地开发、测试、代码规范和 PR 流程 |
 
-## 交流群
-
-扫码加入飞书交流群，获取使用帮助、版本动态和创作经验：
-
-<p align="center">
-  <img src="docs/assets/feishu-qr.png" alt="ArcReel 飞书交流群二维码" width="280">
-</p>
 
 遇到可以复现的 Bug 或明确的功能需求，也可以直接提交 [GitHub Issue](https://github.com/ArcReel/ArcReel/issues)。
 
