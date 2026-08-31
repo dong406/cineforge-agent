@@ -1,0 +1,10 @@
+# 仅供本机开发部署：使用当前工作区源码，而非上游发布镜像。
+services:
+  arcreel:
+    build:
+      context: ..
+      args:
+        DEBIAN_MIRROR: https://mirrors.tuna.tsinghua.edu.cn
+    image: cineforge-agent:local
+    ports: !override
+      - "127.0.0.1:1241:1241"

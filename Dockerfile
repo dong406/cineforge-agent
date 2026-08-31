@@ -24,8 +24,13 @@ RUN pnpm build
 # ============================================================
 FROM python:3.12-slim AS production
 
-# 安装系统依赖
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# 可通过构建参数切换 Debian 镜像源；留空时保持官方默认源。
+ARG DEBIAN_MIRROR=
+
+# 安装系统依赖。公共 Debian 镜像偶发 502/连接重置时，有限重试避免整次镜像构建失败。
+RUN if [ -n "$DEBIAN_MIRROR" ]; then sed -i "s|http://deb.debian.org|$DEBIAN_MIRROR|g" /etc/apt/sources.list.d/debian.sources; fi \
+    && apt-get -o Acquire::Retries=5 -o Acquire::http::Timeout=30 update \
+    && apt-get -o Acquire::Retries=5 -o Acquire::http::Timeout=30 install -y --no-install-recommends \
     ffmpeg \
     curl \
     bubblewrap \
