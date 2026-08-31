@@ -111,19 +111,3 @@ docker compose up -d
 ```bash
 uv run pre-commit install
 ```
-
-## 上游项目与许可证
-
-CineForge Agent 基于开源项目 [ArcReel](https://github.com/ArcReel/ArcReel) 进行界面品牌与使用体验调整。项目继续遵循 [GNU Affero General Public License v3.0](LICENSE)，附加条款见 [NOTICE](NOTICE)。
-
-如果你的组织无法采用 AGPL-3.0，或者希望在不承担 AGPL 开源义务的情况下进行商业部署、白标或再分发，请联系：
-
-**support@arc-reel.com**
-
-上游版权：Copyright © 2026 Pollo3470 and ArcReel contributors
-
----
-
-<p align="center">
-  如果 CineForge Agent 对你有帮助，欢迎点亮一个 ⭐ Star。
-</p>
